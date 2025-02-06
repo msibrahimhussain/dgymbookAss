@@ -1,0 +1,101 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--background);
+  color: var(--text);
+  margin: 0;
+}
+
+.app-container {
+  text-align: center;
+  padding: 20px;
+  width: 320px;
+}
+
+.grid-container {
+  display: grid;
+  flex: container;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.grid-row {
+  display: flex;
+  gap: 8px;
+}
+
+.grid-cell {
+  width: 40px;
+  height: 40px;
+  background-color: lightgray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  border-radius: 4px;
+}
+
+.correct {
+  background-color: green;
+}
+
+.partial {
+  background-color: yellow;
+}
+
+.wrong {
+  background-color: gray;
+}
+
+.guess-input {
+  padding: 10px;
+  font-size: 16px;
+  width: 80%;
+  margin-bottom: 8px;
+  margin-top: 16px;
+}
+
+.submit-btn,
+.new-game-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  margin: 4px;
+}
+
+.message-text {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.dark-mode-toggle {
+  background-color: black;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 8px;
+  border: 1px solid greenyellow;
+  color: greenyellow;
+  font-weight: bold;
+}
+
+.light {
+  background: white;
+  color: black !important;
+}
+
+.dark {
+  background: black;
+}
+h1 {
+  color: blueviolet;
+}
