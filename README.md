@@ -1,193 +1,116 @@
-In this project, let's perform **Fetch and Routing** by applying the concepts we have learned till now.
+Wordle-like Game in React
 
-### Refer to the image below:
+Github link: https://github.com/msibrahimhussain/dgymbookAss
 
-<br/>
-<div style="text-align: center;">
-    <img src="https://assets.ccbp.in/frontend/content/react-js/fetch-and-routing-practice-output.gif" alt="fetch and routing practice desktop output" style="max-width:70%;box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.12)">
-</div>
-<br/>
+Project Overview
 
-### Design Files
+This project is a simple implementation of a Wordle-like game using ReactJS. Players have 6 attempts to guess a 5-letter word. After each guess, the app provides color-coded feedback:
 
-<details>
-<summary>Click to view</summary>
+Green: Correct letter in the correct position
 
-- [Extra Small (Size < 576px) and Small (Size >= 576px)](https://assets.ccbp.in/frontend/content/react-js/fetch-and-routing-practice-sm-outputs.png)
-- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px) - Home](https://assets.ccbp.in/frontend/content/react-js/fetch-and-routing-practice-lg-blog-list-output.png)
-- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px) - Blog Item Details](https://assets.ccbp.in/frontend/content/react-js/fetch-and-routing-practice-lg-blog-item-output.png)
+Yellow: Correct letter in the wrong position
 
-</details>
+Gray: Incorrect letter
 
-### Set Up Instructions
+Features
 
-<details>
-<summary>Click to view</summary>
+Core Features
 
-- Download dependencies by running `npm install`
-- Start up the app using `npm start`
-</details>
+Game Logic:
 
-### Completion Instructions
+Players have 6 attempts to guess a hidden word.
 
-<details>
-<summary>Functionality to be added</summary>
-<br/>
+Real-time color-coded feedback for each guess.
 
-The app must have the following functionalities:
+Guess validation to prevent invalid words.
 
-- When the app is opened, Home Route should be displayed
-- When the Home Route is opened,
-  - Make HTTP GET request to the **blogsApiUrl**
-  - **_loader_** should be displayed while fetching the data
-  - After fetching the data, the list of blogs should be displayed
-- When a blog item in Home Route is clicked,
-  - Page should be navigated to the Blog Item Details Route with the URL `/blogs/:id`
-- When the Blog Item Details Route is opened,
-  - Make HTTP GET request to the **blogItemDetailsApiUrl** with the blog id to get the details of the blog
-    - Example: `https://apis.ccbp.in/blogs/2`
-  - **_loader_** should be displayed while fetching the data
-  - After fetching the data, the details of the blog should be displayed
+UI/UX:
 
-</details>
+Responsive grid layout to display previous guesses.
 
-<details>
+Feedback messages for win or loss conditions.
 
-<summary>API Requests & Responses</summary>
-<br/>
+"New Game" button to restart the game.
 
-**blogsApiUrl**
+State Management:
 
-#### API: `https://apis.ccbp.in/blogs`
+Handles guessed words, remaining attempts, and game status.
 
-#### Method: `GET`
+Performance & Code Quality:
 
-#### Description:
+Clean, modular, and readable code.
 
-Returns a response containing the list of all blogs
+Proper component structure for maintainability.
 
-#### Response
+Additional Features:
 
-```json
-[
-  {
-    "id": 1,
-    "title": "React v16.9.0 and the Roadmap Update",
-    "image_url": "https://miro.medium.com/max/1050/1*i3hzpSEiEEMTuWIYviYweQ.png",
-    "avatar_url": "https://miro.medium.com/max/4096/1*wiOSfPd2sY0gXSNK9vv6bg.jpeg",
-    "author": "Dan Abramov,",
-    "topic": "React.js"
-  }
-]
-```
+Animations for feedback.
 
-**blogItemDetailsApiUrl**
+Dark mode toggle.
 
-#### API: `https://apis.ccbp.in/blogs/:id`
+Tech Stack
 
-#### Example: `https://apis.ccbp.in/blogs/2`
+ReactJS for building user interfaces.
 
-#### Method: `GET`
+CSS for styling.
 
-#### Description:
+Setup Instructions
 
-Returns a response containing the details of the specific blog
+Clone the repository:
 
-#### Response
+git clone <repository-url>
+cd wordle-game
 
-```json
-{
-  "id": 2,
-  "title": "React v16.7: No, This Is Not the One With Hooks",
-  "image_url": "https://miro.medium.com/max/3158/1*kEPCQNY4dwVyaFuLEwJcNQ.png",
-  "avatar_url": "https://avatars.githubusercontent.com/u/3624098?v=4",
-  "author": "Andrew Clark",
-  "content": "React follows semantic versioning. Typically, this means that we use patch versions for bugfixes, and minors for new (non-breaking) features. However, we reserve the option to release minor versions even if they do not include new features. The motivation is to reserve patches for changes that have a very low chance of breaking. Patches are the most important type of release because they sometimes contain critical bugfixes.",
-  "topic": "React.js"
-}
-```
+Install dependencies:
 
-</details>
+npm install
 
-<details>
-<summary>Components Structure</summary>
+Start the application:
 
-<br/>
-<div style="text-align: center;">
-    <img src="https://assets.ccbp.in/frontend/content/react-js/fetch-and-routing-practice-home-component-breakdown-structure.png" alt="fetch and routing practice home component breakdown structure" style="max-width:100%;box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.12)">
-</div>
-<br/>
-<div style="text-align: center;">
-    <img src="https://assets.ccbp.in/frontend/content/react-js/fetch-and-routing-practice-blog-item-component-breakdown-structure.png" alt="fetch and routing practice blog item component breakdown structure" style="max-width:100%;box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.12)">
-</div>
-<br/>
-</details>
+npm start
 
-<details>
-<summary>Implementation Files</summary>
-<br/>
+Open http://localhost:3000 in your browser to view the app.
 
-Use these files to complete the implementation:
+Component Structure
 
-- `src/App.js`
-- `src/components/Home/index.js`
-- `src/components/BlogList/index.js`
-- `src/components/BlogList/index.css`
-- `src/components/BlogItem/index.js`
-- `src/components/BlogItem/index.css`
-- `src/components/BlogItemDetails/index.js`
-- `src/components/BlogItemDetails/index.css`
-</details>
+/src
+|-- App.js
+|-- components
+    |-- DarkModeToggle
+    |-- GuessInput.js
+    |-- Grid.js.js
+    |-- Message.js
+|-- styles.css
 
-### Important Note
+Component Details
 
-<details>
-<summary>Click to view</summary>
+App.js: Manages the state and logic of the game.
 
-<br/>
+Grid.js: Renders the game grid and applies feedback styles.
 
-**The following instructions are required for the tests to pass:**
+styles.css: Contains styles for light and dark modes, color-coded feedback, and animations.
 
-- `Home` route should consist of `/` in the URL path
-- `About` route should consist of `/about` in the URL path
-- `Contact` route should consist of `/contact` in the URL path
-- `BlogItemDetails` route should consist of `/blogs/:id` in the URL path
-- No need to use the `BrowserRouter` in `App.js` as we have already included it in the `index.js` file
-- Wrap the `Loader` component with an HTML container element and add the `data-testid` attribute value as `loader` to it as shown below:
+How to Play
 
-  ```jsx
-  <div data-testid="loader">
-    <Loader type="TailSpin" color="#00bfff" height={50} width={50} />
-  </div>
-  ```
+Enter your 5-letter guess.
 
-</details>
+Submit the guess and observe the color-coded feedback.
 
-### Resources
+Continue guessing until you win or run out of attempts.
 
-<details>
-<summary>Colors</summary>
+Click the "New Game" button to restart.
 
-<br/>
+Completion Instructions
 
-<div style="background-color: #8e8e8e; width: 150px; padding: 10px; color: white">Hex: #8e8e8e</div>
-<div style="background-color: #000000; width: 150px; padding: 10px; color: white">Hex: #000000</div>
-<div style="background-color: #d3d3d3; width: 150px; padding: 10px; color: white">Hex: #d3d3d3</div>
-<div style="background-color: #2f4f4f; width: 150px; padding: 10px; color: white">Hex: #2f4f4f</div>
+Requirements Met
 
-</details>
+Game logic with accurate color-coded feedback.
 
-<details>
-<summary>Font-families</summary>
+Proper state management and clean UI.
 
-- Roboto
+Responsive layout and dark mode toggle.
 
-</details>
+No backend required; hardcoded words.
 
-> ### _Things to Keep in Mind_
->
-> - All components you implement should go in the `src/components` directory.
-> - Don't change the component folder names as those are the files being imported into the tests.
-> - **Do not remove the pre-filled code.**
-> - Want to quickly review some of the concepts you’ve been learning? Take a look at the Cheat Sheets.
 
+Enjoy playing this simple Wordle-like game!
